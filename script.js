@@ -1,10 +1,10 @@
 // Create a "close" button and append it to each list item
 
-let myNodelist = document.getElementsByTagName("LI");
+const myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
-  let span = document.createElement("SPAN");
-  let txt = document.createTextNode("\u00D7");
+  const span = document.createElement("SPAN");
+  const txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
@@ -12,18 +12,18 @@ for (i = 0; i < myNodelist.length; i++) {
 
 // Click on a close button to hide the current list item
 
-let close = document.getElementsByClassName("close");
-let i;
+const close = document.getElementsByClassName("close");
+var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function () {
-    let div = this.parentElement;
+    const div = this.parentElement;
     div.style.display = "none";
   };
 }
 
 // Add a "checked" symbol when clicking on a list item
 
-let list = document.querySelector("ul");
+const list = document.querySelector("ul");
 list.addEventListener(
   "click",
   function (ev) {
@@ -49,9 +49,9 @@ document
 // Function to create a new list item
 
 function newElement() {
-  let li = document.createElement("li");
-  let inputValue = document.getElementById("myInput").value;
-  let t = document.createTextNode(inputValue);
+  const li = document.createElement("li");
+  const inputValue = document.getElementById("myInput").value;
+  const t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === "") {
     alert("You must write something!");
@@ -62,8 +62,8 @@ function newElement() {
 
   // Create a close button and append it to the new list item
 
-  let span = document.createElement("SPAN");
-  let txt = document.createTextNode("\u00D7");
+  const span = document.createElement("SPAN");
+  const txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
@@ -71,7 +71,7 @@ function newElement() {
   // Add functionality to hide the current list item when clicking on the close button
 
   span.onclick = function () {
-    let div = this.parentElement;
+    const div = this.parentElement;
     div.style.display = "none";
   };
 }
